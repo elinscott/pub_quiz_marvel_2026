@@ -1,0 +1,174 @@
+rounds:
+- title: All good things
+  hint: Remember the round title!
+  questions:
+  - question: Which was Pixar's first film not to break even?
+    answer: The Good Dinosaur
+    answer_pic: "media/the_good_dinosaur.jpeg"
+  - question: What was Elton John's best-selling album?
+    answer: Goodbye Yellow Brick Road
+  - question: Which TV show, based on a book coauthored by Neil Gaiman, was abruptly shortened after Gaiman was accused of sexual assault?
+    answer: Good Omens
+  - question: Which song opens with the following lyrics "Deep down in Louisiana close to New Orleans; Way back up in the woods among the evergreens"?
+    answer: Johnny B. Goode
+  - question: Who is the patron saint of Czechia?
+    answer: Wenceslaus I, Duke of Bohemia
+  - question: What name is given to the first Friday after the first full moon after the spring equinox?
+    answer: Good Friday
+  - question: In 2025, which Amazon subsidiary changed its logo from...
+    question_pic: media/marvel_goodreads_both.svg
+    answer: ""
+    picture_resize: 0.35
+    answer_pic: media/goodreads_both.svg
+  - question: For which 1997 film did the writers add an out-of-place oral sex scene into the draft script in order to check that film executives were actually reading it?
+    answer: Good Will Hunting
+- title: "Come to an end"
+  questions:
+  - question: This confused announcement by Günter Schabowski led to what dramatic historical event?
+    question_pic: "media/gunter_schabowski.jpg"
+    answer: The fall of the Berlin Wall
+    answer_pic: "media/fall_of_berlin_wall.jpg"
+  - question: What is this device?
+    picture: "media/zune.jpg"
+    answer: A “Zune” (Microsoft's failed response to the iPod)
+  - question: What major change occurred in in Bulgaria on January 1 of this year?
+    question_pic: "media/bulgaria_nye.jpg"
+    answer: Discontinuation of the lev and adoption of the euro
+    answer_pics:
+    - "media/lev.png"
+    - "media/euro.png"
+- title: "Will we get a fairytale ending?"
+  questions:
+  - question: Economists collectively refer to the rapidly industrialising economies of Hong Kong, Singapore, South Korea, and Taiwan as “The Four Asian ______”
+    answer: “Dragons” or “Tigers”
+    picture: media/tigers_gdp.svg
+  - question: Which YouTube channel has the most subscribers?
+    question_pic: media/youtube.png
+    answer: MrBeast
+    answer_pic: media/mr_beast.jpg
+  - question: Which artist simultaneously held the No. 1 album, single, and film in the United States at one point in 1984?
+    answer: Prince (“Purple Rain”, “When Doves Cry”, and “Purple Rain” respectively)
+    answer_pic: media/purple_rain.jpg
+  - question: Which UNESCO World Heritage Site is this?
+    picture: "media/giants_causeway.jpg"
+    answer: The Giant's Causeway
+    picture_resize: 1.3
+  - question: What is the name for the region between 0.38 and 3 a.u. from the sun?
+    answer: The Goldilocks zone (or habitable zone)
+    answer_pic: media/goldilocks_zone.png
+  - question: On non-macOS Unix and Unix-like systems, .so, .o, and .mod files all follow which standard file format?
+    answer: ELF (Executable and Linkable Format)
+    answer_pic: media/elf_layout.svg
+  - question: Which historical event did Arthur Miller use in his play “The Crucible” as an allegory to criticize McCarthyism?
+    question_pic: media/mccarthyism.jpg
+    answer: The Salem witch trials
+    answer_pic: media/salem.jpg
+  - question: When asked if Apple's logo was a tribute to me, Steve Jobs replied, "God, we wish it were". Who am I?
+    question_pic: "media/apple_rainbow.svg"
+    answer: Alan Turing
+    answer_pic: "media/alan_turing.jpg"
+- title: "The final countdown"
+  hint: "Name the top 8 items in each of the following two categories"
+  questions:
+  - question: "The elements discovered the longest time ago"
+    answer: "Au (40000 BC); C (28000 BC); Cu (9000 BC); Pb (7000 BC); Ag (by 5000 BC); Fe (by 5000 BC); Sn (3500 BC); Sb (3000 BC); S (by 2000 BC); Hg (1500 BC); Zn (by 1000 BC)"
+  - question: "The most populous Swiss cantons"
+    answer: Zürich; Bern; Vaud; Aargau; St. Gallen; Genève; Luzern; Ticino; Valais; and Fribourg
+    answer_pics:
+    - media/zurich_coa.svg
+    - media/bern_coa.svg
+    - media/vaud_coa.svg
+    - media/aargau_coa.svg
+    - media/st_gallen_coa.svg
+    - media/geneve_coa.svg
+    - media/luzern_coa.svg
+    - media/ticino_coa.svg
+    - media/valais_coa.svg
+    - media/fribourg_coa.svg
+    picture_resize: 0.3
+  - question: "Football clubs that have won the Champions League/European Cup the most times"
+    answer: Real Madrid (15); AC Milan (7); Bayern Munich; Liverpool (6); Barcelona (5); Ajax (4); Inter Milan; Manchester United (3); Juventus; Benfica; Chelsea; Nottingham Forest; Porto (2)
+    answer_pics:
+    - media/real.svg
+    - media/milan.svg
+    - media/bayern.svg
+    - media/liverpool.svg
+    - media/barcelona.svg
+    - media/ajax.svg
+    - media/inter.svg
+    - media/united.svg
+    - media/juventus.svg
+    - media/benfica.svg
+    - media/chelsea.svg
+    - media/forest.svg
+    - media/porto.svg
+    picture_resize: 0.2
+- title: "8, 7, 6, 5, 4, 3, 2, 1, ..."
+  hint: The answers to this round are the numbers 1 through 8 without repeats
+  questions:
+  - question: In which decade of the 20th century was the wheeled suitcase patented?
+    answer: "7 (1972)"
+    answer_pic: "media/wheeled_suitcase_patent.png"
+  - question: What number is the most critical DEFCON level?
+    answer: "1"
+  - question: In which century BC was Alexander the Great alive?
+    picture: media/alexander_the_great.jpg
+    answer: "4 (356 to 323 BC)"
+  - question: How many countries have territory in the Arctic Circle?
+    answer: "8 (Canada, Denmark, Finland, Iceland, Norway, Russia, Sweden and the United States)"
+    question_pic: "media/arctic_circle_photo.jpg"
+    answer_pic: "media/arctic_circle.svg"
+  - question: Shakespeare's plays are traditionally structured into how many acts?
+    question_pic: media/shakespeare.jpg
+    answer_pic: media/act_v.png
+    answer: "5"
+  - question: To the nearest kilometre, what is the difference between the depth of the Mariana Trench and the height of Mount Everest?
+    answer: "2"
+    question_pics:
+    - media/everest.jpg
+    - media/challenger_deep.jpg
+    answer_pic: media/everest_vs_mariana.jpg
+  - question: In a year, how many full rotations does the Earth spin about its axis? Three-hundred and sixty... what?
+    answer: "6 (it rotates slightly more than 360° each solar day)"
+    answer_pic: media/sidereal_day.svg
+  - question: What is the total runtime of Game of Thrones, in days?
+    answer: "3 (73 episodes across eight seasons with runtimes of 50 to 83 minutes for a total of 70 hours and 14 minutes)"
+    question_pic: media/got_ned.jpg
+    answer_pic: media/got_coffee_cup.jpg
+- title: "The final round"
+  questions:
+  - question: "What object has a deck, a leash, a stringer and a tail?"
+    answer: "a surfboard"
+    answer_pic: "media/surfboard.jpg"
+  - question: "Which classical composer changed his first name into French when he was young? He was born in 1865 and helped develop the modern form of symphonies and symphonic poems."
+    answer: Jean Sibelius (born Johan)
+    answer_pic: "media/sibelius.jpg"
+  - question: The “Caspian Sea Monster” holds the record for being the longest what in the world?
+    answer: aircraft/fixed wing vehicle
+    answer_pic: "media/km.jpg"
+  - question: Of the nine central Star Wars films, which has the lowest rating on Rotten Tomatoes?
+    question_pic: media/rotten-tomatoes.jpg
+    answer: "Epsiode IX: The Rise of Skywalker"
+    answer_pic: "media/rise_of_skywalker.jpg"
+  - question: What animated TV series, popular with both kids and adults, takes place in the post-apocalyptic Land of Ooo?
+    answer: Adventure Time
+    answer_pic: "media/adventure_time.jpeg"
+  - question: "Apart from humans, name the one type of animal that are known to go through menopause?"
+    answer: "Whales (specifically, five toothed-whale species including orcas and belugas)"
+    answer_pic: media/orca.jpg
+  - question: Alongside Audi, which luxury car maker will have a new team join the F1 circuit in 2026?
+    question_pic: media/f1.jpg
+    answer: Cadillac
+    answer_pic: media/cadillac_logo.svg
+  - question: What links all the answers in this round?
+    answer: They all contain fins/Finns (it was the fin-al round, after all!)
+    answer_pics:
+    - media/surfboard_with_fin.jpg
+    - media/sibelius_with_flag.png
+    - media/km_fin.jpg
+    - media/rise_of_skywalker_with_finn.jpg
+    - media/adventure_time_finn.jpeg
+    - media/orca_flipper.jpg
+    - media/cadillac_fins.jpg
+    picture_resize: 0.5
+  

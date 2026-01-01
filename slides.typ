@@ -2,51 +2,373 @@
 #import "@preview/pinit:0.1.4": *
 #import "@preview/xarrow:0.3.0": xarrow
 #import "@preview/cetz:0.3.3"
-#import "psi-slides-0.6.1.typ": *
+#import "quiz-slides-0.6.1.typ": *
 
 // color-scheme can be navy-red, blue-green, or pink-yellow
-// #let s = psi-slides.register(aspect-ratio: "16-9", color-scheme: "pink-yellow")
-#show: psi-theme.with(aspect-ratio: "16-9",
-                      color-scheme: "pink-yellow",
+#show: quiz-theme.with(aspect-ratio: "16-9",
+                       footer-a: none,
+                       footer-b: none,
+                       footer-c: none,
                              config-info(
-                                title: [Title],
-                                subtitle: [Subtitle],
+                                title: [MARVEL Retreat Pub Quiz],
+                                subtitle: [],
                                 author: [Edward Linscott],
-                                date: datetime(year: 2025, month: 1, day: 1),
-                                location: [Location],
-                                references: [references.bib],
+                                date: datetime(year: 2026, month: 1, day: 12),
+                                location: [Grindelwald],
                              ))
 
-#set footnote.entry(clearance: 0em)
-#show bibliography: set text(0.6em)
+#let fill-in-the-blank(before, after, answer) = {
+  only(before, box(text(answer, weight: "bold", fill: white), stroke: (bottom: 1pt, rest: none), clip: true))
+  only(after, text(answer, weight: "bold"))
+}
 
 #title-slide()
 
-== Outline
-Text
+= How it works
+== Format
+- five regular rounds #pause
+  - eight questions each, which we will go through together #pause
+  - questions within each round are linked by some common thread #pause
+- picture and puzzle rounds #pause
+  - *for you to complete in your spare time* #pause
+  - examples to follow #pause
 
-= Introduction
+- if you need something clarified, just ask! #pause
+- at the end of each round I can repeat previous questions upon request, so don't worry if you've forgotten a previous question #pause
+- the quizmaster is _always_ right!
 
-== Subsection
+= Examples
+#slide(repeat: 2, self => [
+//   #let (uncover, only, alternatives) = utils.methods(self)
+// _Who/what does this LEGO set celebrate?_
+// #align(center,
+//   stack(dir: ltr, 
+//   image("pictures/lego/lego_margaret_hamilton.png", height: 70%),
+//   only("2-")[#image("pictures/margaret_hamilton.png", height: 70%)])
+// )
+// #only("2-")[
+//   #align(center + horizon, "Margaret Hamilton")
+// ]
+])
 
-#par(justify: true)[#lorem(200)]
+#slide(repeat: 3, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
 
-#focus-slide()[Here is a focus slide presenting a key idea]
+  _Fill in the missing piece of the puzzle_
 
-#matrix-slide()[
-  This is a matrix slide
-][
-  You can use it to present information side-by-side
-][
-  with an arbitrary number of rows and columns
+  #uncover("2-")[Pillar] 1. Natarajan
+
+  #uncover("2-")[Pillar] 2. Ceriotti
+
+  #uncover("2-")[Pillar] 3. Pizzi
+
+  #uncover("2-")[Pillar] 4. #fill-in-the-blank("1-2", "3-", "Marzari")
+])
+
+#slide(repeat: 6, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+
+  _Fill in the missing piece of the puzzle_
+
+  - pe (skateboarding) #only("2-")[\= half-pi#text(weight: "bold", "pe")]
+  
+  - thon (athletics) #only("3-")[\= half-mara#text(weight: "bold", "thon")]
+
+  - son (wrestling) #only("4-")[\= half-nel#text(weight: "bold", "son")]
+
+  - ley (#fill-in-the-blank("-5", "6-", "tennis")) #only("5-")[\= half-vol#text(weight: "bold", "ley")]
+
+])
+
+// Loop over the rounds
+#let generate_slides(contents) = {
+   for (round_num) in array.range(1, contents.rounds.len() + 1) [
+      #let round = contents.rounds.at(round_num - 1)
+      = Round #round_num: #round.title
+
+    #if ("hint") in round [
+      #slide[
+        #align(center + horizon, text(round.hint, size: 1.5em, style: "italic"))
+      ]
+    ]
+    #if ("explanation") in round [
+      #include(round.explanation)
+    ]
+    #if ("questions") in round [
+
+      #for (question_num) in array.range(1, round.questions.len() + 1) [
+        #let question = round.questions.at(question_num - 1)
+        #if ("picture_resize") not in question [
+          #question.insert("picture_resize", 1)
+        ]
+        #slide[
+          #align(center + horizon, [#question_num] + [. ] + question.question)
+          #if ("picture" in question) [
+            #align(center + horizon, image(question.picture, height: 60% * question.picture_resize ))
+          ]
+          #if ("pictures" in question) [
+            #align(center, grid(columns: question.pictures.len(), column-gutter: 1em, ..for (pic) in question.pictures {(image(pic, height: 60% * question.picture_resize),)}))
+          ]
+          #if ("question_pic" in question) [
+            #align(center + horizon, image(question.question_pic, height: 60% * question.picture_resize))
+          ]
+          #if ("question_pics" in question) [
+            #align(center, grid(columns: question.question_pics.len(), column-gutter: 1em, ..for (pic) in question.question_pics {(image(pic, height: 60% * question.picture_resize),)}))
+          ]
+        ]
+      ]
+      = Answers
+      #for (question_num) in array.range(1, round.questions.len() + 1) [
+        #let question = round.questions.at(question_num - 1)
+        #if ("picture_resize") not in question [
+          #question.insert("picture_resize", 1)
+        ]
+        #slide(repeat: 2 + str(question.answer).matches(";").len(), self => [
+          #let (uncover, only, alternatives) = utils.methods(self)
+          #align(center + horizon, [#question_num] + [. ] + question.question)
+          #if ("picture" in question) [
+            #align(center + horizon, image(question.picture, height: 60% * question.picture_resize))
+          ]
+          #if ("pictures" in question) [
+            #align(center, grid(columns: question.pictures.len(), column-gutter: 1em, ..for (pic) in question.pictures {(image(pic, height: 60% * question.picture_resize),)}))
+          ]
+          #if ("question_pic" in question or "question_pics" in question) [
+            #only("1")[
+              #if ("question_pic" in question) [
+                #align(center + horizon, image(question.question_pic, height: 60% * question.picture_resize))
+              ]
+              #if ("question_pics" in question) [
+                #align(center, grid(columns: question.question_pics.len(), column-gutter: 1em, ..for (pic) in question.question_pics {(image(pic, height: 60% * question.picture_resize),)}))
+              ]
+            ]
+            #only("2-")[
+              #if ("answer_pic" in question) [
+                #align(center + horizon, image(question.answer_pic, height: 60% * question.picture_resize))
+              ]
+              #if ("answer_pics" in question) [
+                #align(center, grid(columns: question.answer_pics.len(), column-gutter: 1em, ..for (pic) in question.answer_pics {(image(pic, height: 60% * question.picture_resize),)}))
+              ]
+            ]
+          ] else [
+            #uncover("2-")[
+              #if ("answer_pic" in question) [
+                #align(center + horizon, image(question.answer_pic, height: 60% * question.picture_resize))
+              ]
+              #if ("answer_pics" in question) [
+                #align(center, grid(columns: question.answer_pics.len(), column-gutter: 1em, ..for (pic) in question.answer_pics {(image(pic, height: 60% * question.picture_resize),)}))
+              ]
+            ]
+
+          ]
+          #pause
+          #align(center + horizon, str(question.answer).split(";").join("," + pause))
+        ])
+      ]
+    ]
+  ]
+
+  new-section-slide[Pictures]
+
+  // for picture_num in array.range(1, contents.pictures.pictures.len() + 1) [
+  //   #let picture = contents.pictures.pictures.at(picture_num - 1)
+  //   #slide(repeat: 2, self => [
+  //     #align(center + horizon, [#picture_num])
+  //     #only("1")[
+  //       #align(center + horizon, image(picture.question, height: 60%))
+  //     ]
+  //     #only("2")[
+  //       #align(center + horizon, image(picture.answer_pic, height: 60%))
+  //       #align(center + horizon, picture.answer)
+  //     ]
+  //   ])
+  // ]
+
+  // for puzzle_num in array.range(1, contents.puzzles.puzzles.len() + 1) [
+  //   #let puzzle = contents.puzzles.puzzles.at(puzzle_num - 1)
+  //   #slide(repeat: 6, self => [
+  //     #let (uncover, only, alternatives) = utils.methods(self)
+  //     #include(puzzle.content)
+  //   ])
+  // ]
+}
+
+#generate_slides(
+   yaml("questions.yaml")
+)
+
+= The last piece of the puzzle
+
+#slide(repeat: 3, self => [
+  1.
+
+  #align(center,
+  grid(columns: 4, align: horizon, gutter: 1em,
+  [Zambians are thoughtful],
+  [Tunisians don't like dogs],
+  [Nigerians listen],
+  [#alternatives-match(("1-2": box(line(length: 5em)), "3": [_e.g._ *The Swiss*])) like pineapple on pizza],
+  image("media/Flag_of_Zambia.svg", height: 3em),
+  image("media/Flag_of_Tunisia.svg", height: 3em),
+  [#image("media/Flag_of_Nigeria.svg", height: 3em) #pause],
+  image("media/flag_of_switzerland.svg", height: 3em)
+  ))
+])
+// Zambians are thoughtful
+// Moroccans don't like dogs
+// Nigerians listen
+// ________ like pineapple on pizza
+// e.g. the Swiss
+//
+// 
+// 
+
+#slide(repeat: 6, self => [
+  2. #box() #v(1em)
+    #align(horizon, [
+      + federal #only("2-")[#sym.eq national]
+      + academy #only("3-")[#sym.eq centre]
+      + intelligent #only("4-")[#sym.eq competence]
+      + #fill-in-the-blank("-5", "6-", "literature") #only("5-")[#sym.eq research]
+    ])
+])
+// 1. federal
+// 2. academy
+// 3. intelligent
+// 4. ________
+// e.g. literature
+// 
+//
+// 
+#slide(repeat: 6, self => [
+  3. #v(2em)
+    #align(horizon, [
+      #alternatives-match(("1": [366.48 K], "2-": [200 degrees,])) #fill-in-the-blank("-5", "6-", "that's why they call me Mr. Fahrenheit") \
+      #alternatives-match(("-2": [$v_"me" = c$], "3-": [I'm travelling at the speed of light])) \
+      #fill-in-the-blank("-5", "6-", "I wanna make a") #alternatives-match(("-3": [> 343 m/s (in dry air at 1 atm and 20°C)], "4-": [supersonic])) #fill-in-the-blank("-5", "6-", "man out of you") \
+      #fill-in-the-blank("-5", "6-", "Don't") #alternatives-match(("-4": [$bold(p)_"me" (t) - integral_t^(t_"now") bold(F)(t') dif t' = 0$], "5-": "stop me now"))\
+      // #fill-in-the-blank("343 m/s", "-4", "5-") #only("4-")[#sym.eq in dry air at 1 atm and 20 deg c]
+      // #fill-in-the-blank("p_me(t) - int_t^t_now F(t') dt' = 0", "-5", "6-") #only("5-")[#sym.eq equation of motion]
+      // 
+      
+    ])
+
+]) 
+// 366.48 K, _____
+// v_me = c
+// ____ > 343 m/s* _______
+// _______ p_me(t) - int_t^t_now F(t') dt' = 0
+// 
+// *in dry air at 1 atm and 20 deg c
+//
+#slide(repeat: 10, self => [
+  4. #v(2em)
+  - asking for information about #only("2-")[(#text(weight: "bold", [wh])at)] a temple in Cambodia #only("3-")[(#text(weight: "bold", [w])at)]
+  - to sharpen a knife #only("4-")[(#text(weight: "bold", [wh])et)] soaked in water #only("5-")[(#text(weight: "bold", [w])et)]
+  - during which#only("6-")[ (#text(weight: "bold", [wh])ile)], be cunning and devious #only("7-")[(#text(weight: "bold", [w])ile)]
+  - complain about #only("8-")[(#text(weight: "bold", [wh])ine)] #fill-in-the-blank("-9", "10-", "e.g. fermented grapes") #only("9-")[(#text(weight: "bold", [w])ine)]
+]) 
+// wh & w
+// asking for information about a temple in Cambodia (what and wat)
+// to sharpen a knife soaked in water (whet / wet)
+// during which, be cunning and devious (while and wile)
+// complain about ________________ (whine and wine)
+
+
+// #slide[
+//   #v(1em)
+//   1.
+//   #grid(columns: (1fr, 1fr, 1fr, 1fr), align: center, column-gutter: 1em,
+//     image("puzzles/marilyn_monroe.jpg", height: 50%),
+//     image("puzzles/carey_mulligan.jpg", height: 50%),
+//     image("puzzles/madonna.jpg", height: 50%),
+//     image("puzzles/kylie_minogue.png", height: 50%)
+//   )
+//   #pause
+//   #grid(columns: (1fr, 1fr, 1fr, 1fr), align: center, column-gutter: 1em, [Marilyn Monroe], [Carey Mulligan], [Madonna], [Kylie Minogue])
+//   #pause
+//   #grid(columns: (1fr, 1fr, 1fr, 1fr), align: center, column-gutter: 1em, [mm], [cm], [m], [km])
+// ]
+// 
+// #slide(repeat: 6, self => [
+//   #let (uncover, only, alternatives) = utils.methods(self)
+//   #v(2em)
+//   2.
+// 
+//   - #uncover("2-")[*prote*]in molecules with amino acids
+//   - #uncover("3-")[*prote*]gee, she's got an attentive mentor
+//   - #uncover("4-")[*prote*]sting, march and chant
+//   - #uncover("5-")[*prote*]a plant from South Africa
+// 
+//   #only("6-")[
+//   Add "prote" to the beginning of the first word to get the definition that follows
+//   ]
+// ])
+// 
+// #slide[
+//   #v(2em)
+//   3.
+// 
+//   #align(center + horizon,
+//   grid(columns: (1fr, 1fr, 1fr, 1fr), column-gutter: 1em,
+//   image("puzzles/guatemala_rotated_with_flag_and_outline.png", height: 30%),
+//   image("puzzles/spain_rotated_with_flag_and_outline.png", height: 30%),
+//   image("puzzles/bangladesh_rotated_with_flag_and_outline.png", height: 30%),
+//   image("puzzles/fiji_rotated_with_flag_and_outline.png", height: 30%)))
+//   #pause
+//   #align(center + horizon,
+//     grid(columns: (1fr, 1fr, 1fr, 1fr), column-gutter: 1em, [Guatemala], [Spain], [Bangladesh], [Fiji],)
+//   )
+//   #pause
+//   #align(center + horizon,
+//     grid(columns: (1fr, 1fr, 1fr, 1fr), column-gutter: 1em, [89° W], [4° W], [90° E], [175° E])
+//   )
+// ]
+// 
+// 
+// #slide(repeat: 6, self => [
+//   #let (uncover, only, alternatives) = utils.methods(self)
+//   #align(center + horizon,
+//   grid(columns: (1fr, 1fr, 1fr, 1fr), align: center, column-gutter: 1em, [car], [handbag], [television], [movie])
+//   )
+//   #pause
+//   #only("2")[#align(center + horizon, image("puzzles/car.png", width: 80%))]
+//   #only("3")[#align(center + horizon, image("puzzles/handbag.png", height: 80%))]
+//   #only("4")[#align(center + horizon, image("puzzles/tv2.png", height: 80%))]
+//   #only("5")[#align(center + horizon, image("puzzles/movie.png", height: 80%))]
+//   #only("6")[#align(center + horizon, image("puzzles/piracy_its_a_crime.png", height: 80%))]
+// ])
+// 
+
+= Please add up your total score and bring up your answer sheets
+
+=
+
+= Our winner, with a score of , is...
+==
+
+#focus-slide([
+#align(center + horizon,
+  image("media/chatgpt_wins.png", width: 110%, height: 120%)
+)
 ]
+)
 
-More text appears under the same subsection title as earlier
+= And while you may be obsolete... I'm not (yet)
+==
+> _Come up with interesting pub questions about objects/concepts/people/etc. which have "come to an end". The questions should encourage lateral thinking and be gettable with an educated guess, but not too easy._
 
-== New Subsection
-But a new subsection starts a new page.
+#pause
 
-Now, let's cite a nice paper.@Linscott2023
+Sure, here are some interesting pub quiz questions about objects, concepts, or people that have "come to an end":
 
-== References
-#bibliography("references.bib")
+#pause
+
+🌍 Nature & Environment
+#pause
+1. What dodo-sized bird was driven to extinction in the 17th century due to human activity and introduced species on its native island of Mauritius?
+   - Answer: The Dodo
+
+#focus-slide(background-color: black)[
+  #set text(font: "edwardian script itc", size: 3em)
+  #align(center, [_Fin_])
+]
