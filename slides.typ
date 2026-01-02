@@ -29,27 +29,16 @@
 - five regular rounds #pause
   - eight questions each, which we will go through together #pause
   - questions within each round are linked by some common thread #pause
-- picture and puzzle rounds #pause
+- we will have an extended break after round 3 (during which round 4 will take place) #pause
+- rounds 7 and 8 are the picture and puzzle rounds #pause
   - *for you to complete in your spare time* #pause
-  - examples to follow #pause
+  - example puzzles to follow #pause
 
 - if you need something clarified, just ask! #pause
 - at the end of each round I can repeat previous questions upon request, so don't worry if you've forgotten a previous question #pause
 - the quizmaster is _always_ right!
 
-= Examples
-#slide(repeat: 2, self => [
-//   #let (uncover, only, alternatives) = utils.methods(self)
-// _Who/what does this LEGO set celebrate?_
-// #align(center,
-//   stack(dir: ltr, 
-//   image("pictures/lego/lego_margaret_hamilton.png", height: 70%),
-//   only("2-")[#image("pictures/margaret_hamilton.png", height: 70%)])
-// )
-// #only("2-")[
-//   #align(center + horizon, "Margaret Hamilton")
-// ]
-])
+= Example puzzles
 
 #slide(repeat: 3, self => [
   #let (uncover, only, alternatives) = utils.methods(self)
@@ -109,6 +98,9 @@
           #if ("pictures" in question) [
             #align(center, grid(columns: question.pictures.len(), column-gutter: 1em, ..for (pic) in question.pictures {(image(pic, height: 60% * question.picture_resize),)}))
           ]
+          #if ("question_content" in question) [
+            #include(question.question_content)
+          ]
           #if ("question_pic" in question) [
             #align(center + horizon, image(question.question_pic, height: 60% * question.picture_resize))
           ]
@@ -132,13 +124,16 @@
           #if ("pictures" in question) [
             #align(center, grid(columns: question.pictures.len(), column-gutter: 1em, ..for (pic) in question.pictures {(image(pic, height: 60% * question.picture_resize),)}))
           ]
-          #if ("question_pic" in question or "question_pics" in question) [
+          #if ("question_pic" in question or "question_pics" in question or "question_content" in question) [
             #only("1")[
               #if ("question_pic" in question) [
                 #align(center + horizon, image(question.question_pic, height: 60% * question.picture_resize))
               ]
               #if ("question_pics" in question) [
                 #align(center, grid(columns: question.question_pics.len(), column-gutter: 1em, ..for (pic) in question.question_pics {(image(pic, height: 60% * question.picture_resize),)}))
+              ]
+              #if ("question_content" in question) [
+                #include(question.question_content)
               ]
             ]
             #only("2-")[
@@ -167,21 +162,21 @@
     ]
   ]
 
-  new-section-slide[Pictures]
 
-  // for picture_num in array.range(1, contents.pictures.pictures.len() + 1) [
-  //   #let picture = contents.pictures.pictures.at(picture_num - 1)
-  //   #slide(repeat: 2, self => [
-  //     #align(center + horizon, [#picture_num])
-  //     #only("1")[
-  //       #align(center + horizon, image(picture.question, height: 60%))
-  //     ]
-  //     #only("2")[
-  //       #align(center + horizon, image(picture.answer_pic, height: 60%))
-  //       #align(center + horizon, picture.answer)
-  //     ]
-  //   ])
-  // ]
+  heading(contents.pictures.title, depth: 1)
+  for picture_num in array.range(1, contents.pictures.pictures.len() + 1) [
+    #let picture = contents.pictures.pictures.at(picture_num - 1)
+    #slide(repeat: 2, self => [
+      #align(center + horizon, [#picture_num])
+      #alternatives[
+        #align(center + horizon, image(picture.question, height: 60%))
+        #linebreak()
+      ][
+        #align(center + horizon, image(picture.answer_pic, height: 60%))
+        #align(center + horizon, picture.answer)
+      ]
+    ])
+  ]
 
   // for puzzle_num in array.range(1, contents.puzzles.puzzles.len() + 1) [
   //   #let puzzle = contents.puzzles.puzzles.at(puzzle_num - 1)
@@ -198,37 +193,29 @@
 
 = The last piece of the puzzle
 
-#slide(repeat: 3, self => [
+#slide(repeat: 5, self => [
   1.
 
   #align(center,
   grid(columns: 4, align: horizon, gutter: 1em,
-  [Zambians are thoughtful],
-  [Tunisians don't like dogs],
-  [Nigerians listen],
-  [#alternatives-match(("1-2": box(line(length: 5em)), "3": [_e.g._ *The Swiss*])) like pineapple on pizza],
-  image("media/Flag_of_Zambia.svg", height: 3em),
-  image("media/Flag_of_Tunisia.svg", height: 3em),
-  [#image("media/Flag_of_Nigeria.svg", height: 3em) #pause],
+  [The Danes get road rage],
+  [Canadians treat waiters poorly],
+  [Tunisians lie about their age],
+  [#fill-in-the-blank("1-4", "5", "e.g. The Swiss") like pineapple on pizza],
+  pause + image("media/denmark.svg", height: 3em),
+  pause + image("media/canada.png", height: 3em),
+  pause + image("media/Flag_of_Tunisia.svg", height: 3em) + pause,
   image("media/flag_of_switzerland.svg", height: 3em)
   ))
 ])
-// Zambians are thoughtful
-// Moroccans don't like dogs
-// Nigerians listen
-// ________ like pineapple on pizza
-// e.g. the Swiss
-//
-// 
-// 
 
 #slide(repeat: 6, self => [
   2. #box() #v(1em)
     #align(horizon, [
       + federal #only("2-")[#sym.eq national]
       + academy #only("3-")[#sym.eq centre]
-      + intelligent #only("4-")[#sym.eq competence]
-      + #fill-in-the-blank("-5", "6-", "literature") #only("5-")[#sym.eq research]
+      + intelligence #only("4-")[#sym.eq competence]
+      + #fill-in-the-blank("-5", "6-", "e.g. literature") #only("5-")[#sym.eq research]
     ])
 ])
 // 1. federal
