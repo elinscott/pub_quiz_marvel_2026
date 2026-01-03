@@ -9,14 +9,17 @@ rounds:
     question_content: jbg_lyrics.typ
     answer_pic: media/jbg.jpg
     answer: Johnny B. Goode
-  - question: Who is the patron saint of Czechia?
-    answer: Wenceslaus I, Duke of Bohemia
   - question: Which real place in the world is said to be the home of the legendary ghost ship, the Flying Dutchman?
     question_pic: media/flying_dutchman.jpg
     answer: The Cape of Good Hope
     answer_pic: media/cape_of_good_hope.jpg
-  - question: X
-    answer: Jane Goodall
+  - question: Last year, which mild-mannered zoologist (a) died and then (b) released a video posthumously in which they said (among other things) that they'd like to send Trump, Putin, Xi, Netanyahu, and Musk on one of his rockets “off to the planet he's sure he's going to discover”?
+    question_pic: media/musk_rocket.jpg
+    answer: Jane Goodall 👑👑👑
+    answer_pic: media/jane_goodall.png
+    picture_resize: 0.9
+  - question: "Which is the largest dedicated women's football stadium in the world? (Hint: until mid-2025 it was home to the men‘s team of the same club.)"
+    answer: Goodison Park
   - question: Under the reign of which emperor did Japan transform from an isolationist, feudal state to an industrialised world power?
     answer: Emperor Meiji (also known as Meiji the Great or Meiji the Good). He oversaw the so-called “Meiji Restoration”
     answer_pic: media/meiji.jpg
@@ -97,11 +100,10 @@ rounds:
     answer_pic: "media/alan_turing.jpg"
 - title: "It's the final countdown"
   hint: "Name the top 8 items in each of the following two categories. Half a point for each correct answer before the second wrong answer."
+  explanation: countdown_scoring.typ
   questions:
-  - question: "The elements discovered the longest time ago"
-    answer: "Au (40000 BC); C (28000 BC); Cu (9000 BC); Pb (7000 BC); Ag (by 5000 BC); Fe (by 5000 BC); Sn (3500 BC); Sb (3000 BC); S (by 2000 BC); Hg (1500 BC); Zn (by 1000 BC)"
-  - question: "The most populous Swiss cantons"
-    answer: Zürich; Bern; Vaud; Aargau; St. Gallen; Genève; Luzern; Ticino; Valais; and Fribourg
+  - question: "The eight most populous Swiss cantons"
+    answer: Zürich; Bern; Vaud; Aargau; St. Gallen; Genève; Luzern; Ticino
     answer_pics:
     - media/zurich_coa.svg
     - media/bern_coa.svg
@@ -111,10 +113,8 @@ rounds:
     - media/geneve_coa.svg
     - media/luzern_coa.svg
     - media/ticino_coa.svg
-    - media/valais_coa.svg
-    - media/fribourg_coa.svg
-    picture_resize: 0.3
-  - question: "Football clubs that have won the Champions League/European Cup the most times"
+    picture_resize: 0.4
+  - question: "Football clubs that have won the Champions League/European Cup the most times (i.e. at least twice; there are 13 such clubs)"
     answer: Real Madrid (15); AC Milan (7); Bayern Munich; Liverpool (6); Barcelona (5); Ajax (4); Inter Milan; Manchester United (3); Juventus; Benfica; Chelsea; Nottingham Forest; Porto (2)
     answer_pics:
     - media/real.svg
