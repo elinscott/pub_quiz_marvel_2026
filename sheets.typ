@@ -52,7 +52,7 @@
 
   == Round 7: #contents.pictures.title
   #let round = contents.pictures
-  #align(center, text(round.hint + " Scan the QR code to see the images in greater detail. (And don't forget the round theme!)", size: 0.8em, style: "italic"))
+  #align(center, text(round.hint + " Scan the QR code to see the images in greater detail.", size: 0.8em, style: "italic"))
   #align(center, image("media/qr.png", height: 20%))
 
   #grid(columns: (1cm, 1fr, 1cm, 1fr, 1cm, 1fr),
@@ -73,29 +73,30 @@
 
   #set text(size: 16pt)
 
-  1. #v(1em)
-    - The Danes get road rage
-    - Canadians treat waiters poorly
-    - Tunisians lie about their age
-    - #box(line(length: 5em)) like pineapple on pizza
+  + #v(1em)
+    - asking for information about a temple in Cambodia
+    - to sharpen a knife soaked in water
+    - during which, be cunning and devious
+    - complain about #box(line(length: 5em))
 
-  2. #v(1em)
-    + federal
-    + academy
-    + intelligent
-    + #box(line(length: 5em)) #text("X", fill: white)
-
-  3. #v(1em)
+  + #v(1em)
     366.48 K, #box(line(length: 5em)) \
     $v_"me" = c$ \
     #box(line(length: 5em)) > 343 m/s (in dry air at 1 atm and 20°C) #box(line(length: 5em)) \
     #box(line(length: 5em)) $bold(p)_"me" (t) - integral_t^(t_"now") bold(F)(t') dif t' = 0$
 
-  4. #v(1em)
-    - asking for information about a temple in Cambodia
-    - to sharpen a knife soaked in water
-    - during which, be cunning and devious
-    - complain about #box(line(length: 5em))
+  + #v(1em)
+    - Tongans treat waiters poorly
+    - The Danes get road rage
+    - Tunisians lie about their age
+    - #box(line(length: 5em)) like pineapple on pizza
+
+  + #v(1em)
+    + an international citizen
+    + the outskirts of a hub
+    + a useless ability
+    + ignore the #box(line(length: 5em)) #text("X", fill: white)
+
 ]
 
 #context generate_sheets(

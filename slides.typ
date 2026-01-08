@@ -167,7 +167,7 @@
   for picture_num in array.range(1, contents.pictures.pictures.len() + 1) [
     #let picture = contents.pictures.pictures.at(picture_num - 1)
     #slide(repeat: 2, self => [
-      #align(center + horizon, [#picture_num])
+      #align(center + horizon, [#picture_num.])
       #alternatives[
         #align(center + horizon, image(picture.question, height: 60%))
         #linebreak()
@@ -231,7 +231,7 @@
     #align(horizon, [
       #alternatives-match(("1": [366.48 K], "2-": [200 degrees,])) #fill-in-the-blank("-5", "6-", "that's why they call me Mr. Fahrenheit") \
       #alternatives-match(("-2": [$v_"me" = c$], "3-": [I'm travelling at the speed of light])) \
-      #fill-in-the-blank("-5", "6-", "I wanna make a") #alternatives-match(("-3": [> 343 m/s (in dry air at 1 atm and 20°C)], "4-": [supersonic])) #fill-in-the-blank("-5", "6-", "man out of you") \
+      #fill-in-the-blank("-5", "6-", "I wanna make a") #alternatives-match(("-3": [> 343 m/s (in dry air at 1 atm and 20°C)], "4-": [supersonic])) #fill-in-the-blank("-5", "6-", "man out of you/woman of you") \
       #fill-in-the-blank("-5", "6-", "Don't") #alternatives-match(("-4": [$bold(p)_"me" (t) - integral_t^(t_"now") bold(F)(t') dif t' = 0$], "5-": "stop me now"))\
       // #fill-in-the-blank("343 m/s", "-4", "5-") #only("4-")[#sym.eq in dry air at 1 atm and 20 deg c]
       // #fill-in-the-blank("p_me(t) - int_t^t_now F(t') dt' = 0", "-5", "6-") #only("5-")[#sym.eq equation of motion]
