@@ -193,31 +193,15 @@
 
 = The last piece of the puzzle
 
-#slide(repeat: 5, self => [
-  1.
+#slide(repeat: 10, self => [
+  1. #v(2em)
+  - asking for information about #only("2-")[(#text(weight: "bold", [wh])at)] a temple in Cambodia #only("3-")[(#text(weight: "bold", [w])at)]
+  - to sharpen a knife #only("4-")[(#text(weight: "bold", [wh])et)] soaked in water #only("5-")[(#text(weight: "bold", [w])et)]
+  - during which#only("6-")[ (#text(weight: "bold", [wh])ile)], be cunning and devious #only("7-")[(#text(weight: "bold", [w])ile)]
+  - complain about #only("8-")[(#text(weight: "bold", [wh])ine)] #fill-in-the-blank("-9", "10-", "e.g. fermented grapes") #only("9-")[(#text(weight: "bold", [w])ine)]
+]) 
 
-  #align(center,
-  grid(columns: 4, align: horizon, gutter: 1em,
-  [The Danes get road rage],
-  [Canadians treat waiters poorly],
-  [Tunisians lie about their age],
-  [#fill-in-the-blank("1-4", "5", "e.g. The Swiss") like pineapple on pizza],
-  pause + image("media/denmark.svg", height: 3em),
-  pause + image("media/canada.png", height: 3em),
-  pause + image("media/Flag_of_Tunisia.svg", height: 3em) + pause,
-  image("media/flag_of_switzerland.svg", height: 3em)
-  ))
-])
 
-#slide(repeat: 6, self => [
-  2. #box() #v(1em)
-    #align(horizon, [
-      + federal #only("2-")[#sym.eq national]
-      + academy #only("3-")[#sym.eq centre]
-      + intelligence #only("4-")[#sym.eq competence]
-      + #fill-in-the-blank("-5", "6-", "e.g. literature") #only("5-")[#sym.eq research]
-    ])
-])
 // 1. federal
 // 2. academy
 // 3. intelligent
@@ -227,7 +211,7 @@
 //
 // 
 #slide(repeat: 6, self => [
-  3. #v(2em)
+  2. #v(2em)
     #align(horizon, [
       #alternatives-match(("1": [366.48 K], "2-": [200 degrees,])) #fill-in-the-blank("-5", "6-", "that's why they call me Mr. Fahrenheit") \
       #alternatives-match(("-2": [$v_"me" = c$], "3-": [I'm travelling at the speed of light])) \
@@ -240,26 +224,32 @@
     ])
 
 ]) 
-// 366.48 K, _____
-// v_me = c
-// ____ > 343 m/s* _______
-// _______ p_me(t) - int_t^t_now F(t') dt' = 0
-// 
-// *in dry air at 1 atm and 20 deg c
-//
-#slide(repeat: 10, self => [
-  4. #v(2em)
-  - asking for information about #only("2-")[(#text(weight: "bold", [wh])at)] a temple in Cambodia #only("3-")[(#text(weight: "bold", [w])at)]
-  - to sharpen a knife #only("4-")[(#text(weight: "bold", [wh])et)] soaked in water #only("5-")[(#text(weight: "bold", [w])et)]
-  - during which#only("6-")[ (#text(weight: "bold", [wh])ile)], be cunning and devious #only("7-")[(#text(weight: "bold", [w])ile)]
-  - complain about #only("8-")[(#text(weight: "bold", [wh])ine)] #fill-in-the-blank("-9", "10-", "e.g. fermented grapes") #only("9-")[(#text(weight: "bold", [w])ine)]
-]) 
-// wh & w
-// asking for information about a temple in Cambodia (what and wat)
-// to sharpen a knife soaked in water (whet / wet)
-// during which, be cunning and devious (while and wile)
-// complain about ________________ (whine and wine)
 
+#slide(repeat: 5, self => [
+  3.
+
+  #align(center,
+  grid(columns: 4, align: horizon, gutter: 1em,
+  [Tongans treat waiters poorly],
+  [The Danes get road rage],
+  [Tunisians lie about their age],
+  [#fill-in-the-blank("1-4", "5", "e.g. The Swiss") like pineapple on pizza],
+  pause + image("media/tonga.svg", height: 3em),
+  pause + image("media/denmark.svg", height: 3em),
+  pause + image("media/Flag_of_Tunisia.svg", height: 3em) + pause,
+  image("media/flag_of_switzerland.svg", height: 3em)
+  ))
+])
+
+#slide(repeat: 8, self => [
+  4. #box() #v(1em)
+    #align(horizon, [
+      + an international #only("2-")[_(opposite of “national”)_] citizen #only("3-")[_(synonym of “national”)_]
+      + the outskirts #only("4-")[_(opposite of “centre”)_] of a hub #only("4-")[_(synonym of “centre”)_]
+      + a useless #only("5-")[_(opposite of “competence”)_] ability #only("5-")[_(synonym of “competence”)_]
+      + ignore #only("6-")[_(opposite of “research”)_] the #fill-in-the-blank("-7", "8-", "evidence") #only("7-")[_(synonym of “research”)_]
+    ])
+])
 
 // #slide[
 //   #v(1em)
