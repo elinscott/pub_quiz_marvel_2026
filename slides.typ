@@ -247,7 +247,7 @@
       + an international #only("2-")[_(opposite of “national”)_] citizen #only("3-")[_(synonym of “national”)_]
       + the outskirts #only("4-")[_(opposite of “centre”)_] of a hub #only("4-")[_(synonym of “centre”)_]
       + a useless #only("5-")[_(opposite of “competence”)_] ability #only("5-")[_(synonym of “competence”)_]
-      + ignore #only("6-")[_(opposite of “research”)_] the #fill-in-the-blank("-7", "8-", "evidence") #only("7-")[_(synonym of “research”)_]
+      + ignore #only("6-")[_(opposite of “research”)_] the #fill-in-the-blank("-6", "7-", "evidence") #only("6-")[_(synonym of “research”)_]
     ])
 ])
 
