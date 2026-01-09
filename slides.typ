@@ -347,5 +347,34 @@ Sure, here are some interesting pub quiz questions about objects, concepts, or p
 
 #focus-slide(background-color: black)[
   #set text(font: "edwardian script itc", size: 3em)
-  #align(center, [_Fin_])
+  #place(center + horizon, box([_Fin_]), dx: -0.1em, dy: -0.1em)
+
+  #let images = (
+  "media/surfboard_with_fin.jpg",
+  "media/sibelius_with_flag.png",
+  "media/km_fin.jpg",
+  "media/rise_of_skywalker_with_finn.jpg",
+  "media/adventure_time_finn.jpeg",
+  "media/orca_flipper.jpg",
+  "media/cadillac_fins.jpg",
+)
+
+  #let radius = 6cm
+
+  #for (i, img) in images.enumerate() {
+    let angle = 6.2830 * i / images.len()
+    let pos = (
+      radius * calc.sin(angle),
+      -1 * radius * calc.cos(angle),
+    )
+
+    place(
+      center + horizon,
+      dx: pos.at(0),
+      dy: pos.at(1),
+      box(
+        radius: 50%, width: 4cm, height: 4cm, clip: true, image(img, width: 100%, height: 100%)
+      ),
+      )
+  }
 ]

@@ -114,8 +114,8 @@ rounds:
     - media/luzern_coa.svg
     - media/ticino_coa.svg
     picture_resize: 0.4
-  - question: "Football clubs that have won the Champions League/European Cup the most times (i.e. at least twice; there are 13 such clubs)"
-    answer: Real Madrid (15); AC Milan (7); Bayern Munich; Liverpool (6); Barcelona (5); Ajax (4); Inter Milan; Manchester United (3); Juventus; Benfica; Chelsea; Nottingham Forest; Porto (2)
+  - question: "Football clubs that have won the men's Champions League/European Cup the most times"
+    answer: Real Madrid (15); AC Milan (7); Bayern Munich; Liverpool (6); Barcelona (5); Ajax (4); Inter Milan; Manchester United (3)
     answer_pics:
     - media/real.svg
     - media/milan.svg
@@ -125,11 +125,6 @@ rounds:
     - media/ajax.svg
     - media/inter.svg
     - media/united.svg
-    - media/juventus.svg
-    - media/benfica.svg
-    - media/chelsea.svg
-    - media/forest.svg
-    - media/porto.svg
     picture_resize: 0.2
 - title: "8, 7, 6, 5, 4, 3, 2, 1, ..."
   hint: The answers to this round are the numbers 1 through 8 without repeats

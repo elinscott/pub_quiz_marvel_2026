@@ -83,7 +83,7 @@
     366.48 K, #box(line(length: 5em)) \
     $v_"me" = c$ \
     #box(line(length: 5em)) > 343 m/s (in dry air at 1 atm and 20°C) #box(line(length: 5em)) \
-    #box(line(length: 5em)) $bold(p)_"me" (t) - integral_t^(t_"now") bold(F)(t') dif t' = 0$
+    #box(line(length: 5em)) $bold(p)_"me" (t) - integral_t^(t_"now") bold(F)(t') dif t' = bold(0)$
 
   + #v(1em)
     - Tongans treat waiters poorly
