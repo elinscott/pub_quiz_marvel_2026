@@ -18,7 +18,7 @@
                              ))
 
 #let fill-in-the-blank(before, after, answer) = {
-  only(before, box(text(answer, weight: "bold", fill: white), stroke: (bottom: 1pt, rest: none), clip: true))
+  only(before, box(text(answer, weight: "bold", fill: white), stroke: (bottom: 1.5pt, rest: none), clip: true))
   only(after, text(answer, weight: "bold"))
 }
 
@@ -29,13 +29,17 @@
 - five regular rounds #pause
   - eight questions each, which we will go through together #pause
   - questions within each round are linked by some common thread #pause
+
 - we will have an extended break after round 3 (during which round 4 will take place) #pause
+
 - rounds 7 and 8 are the picture and puzzle rounds #pause
   - *for you to complete in your spare time* #pause
   - example puzzles to follow #pause
 
 - if you need something clarified, just ask! #pause
+
 - at the end of each round I can repeat previous questions upon request, so don't worry if you've forgotten a previous question #pause
+
 - the quizmaster is _always_ right!
 
 = Example puzzles
@@ -195,10 +199,10 @@
 
 #slide(repeat: 10, self => [
   1. #v(2em)
-  - asking for information about #only("2-")[(#text(weight: "bold", [wh])at)] a temple in Cambodia #only("3-")[(#text(weight: "bold", [w])at)]
-  - to sharpen a knife #only("4-")[(#text(weight: "bold", [wh])et)] soaked in water #only("5-")[(#text(weight: "bold", [w])et)]
-  - during which#only("6-")[ (#text(weight: "bold", [wh])ile)], be cunning and devious #only("7-")[(#text(weight: "bold", [w])ile)]
-  - complain about #only("8-")[(#text(weight: "bold", [wh])ine)] #fill-in-the-blank("-9", "10-", "e.g. fermented grapes") #only("9-")[(#text(weight: "bold", [w])ine)]
+    - asking for information about #only("2-")[(#text(weight: "bold", [wh])at)] a temple in Cambodia #only("3-")[(#text(weight: "bold", [w])at)]
+    - to sharpen a knife #only("4-")[(#text(weight: "bold", [wh])et)] soaked in water #only("5-")[(#text(weight: "bold", [w])et)]
+    - during which#only("6-")[ (#text(weight: "bold", [wh])ile)], be cunning and devious #only("7-")[(#text(weight: "bold", [w])ile)]
+    - complain about #only("8-")[(#text(weight: "bold", [wh])ine)] #fill-in-the-blank("-9", "10-", "e.g. fermented grapes") #only("9-")[(#text(weight: "bold", [w])ine)]
 ]) 
 
 
@@ -212,7 +216,7 @@
 // 
 #slide(repeat: 6, self => [
   2. #v(2em)
-    #align(horizon, [
+    #align(horizon + center, [
       #alternatives-match(("1": [366.48 K], "2-": [200 degrees,])) #fill-in-the-blank("-5", "6-", "that's why they call me Mr. Fahrenheit") \
       #alternatives-match(("-2": [$v_"me" = c$], "3-": [I'm travelling at the speed of light])) \
       #fill-in-the-blank("-5", "6-", "I wanna make a") #alternatives-match(("-3": [> 343 m/s (in dry air at 1 atm and 20°C)], "4-": [supersonic])) #fill-in-the-blank("-5", "6-", "man out of you/woman of you") \
@@ -320,7 +324,7 @@
 
 =
 
-= Our winner, with a score of , is...
+= Our winner, with a score of 48/64, is...
 ==
 
 #focus-slide([
@@ -344,6 +348,13 @@ Sure, here are some interesting pub quiz questions about objects, concepts, or p
 #pause
 1. What dodo-sized bird was driven to extinction in the 17th century due to human activity and introduced species on its native island of Mauritius?
    - Answer: The Dodo
+
+#focus-slide([
+#align(center + horizon,
+  image("media/chatgpt_wins.png", width: 110%, height: 120%)
+)
+]
+)
 
 #focus-slide(background-color: black)[
   #set text(font: "edwardian script itc", size: 3em)

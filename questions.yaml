@@ -173,7 +173,6 @@ rounds:
     question_pic: media/rotten-tomatoes-all.jpg
     answer: "Epsiode IX: The Rise of Skywalker"
     answer_pic: "media/rise_of_skywalker.jpg"
-    picture_resize: 0.5
   - question: What animated TV series, popular with both kids and adults, takes place in the post-apocalyptic Land of Ooo?
     answer: Adventure Time
     answer_pic: "media/adventure_time.jpeg"
