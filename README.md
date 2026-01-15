@@ -1,10 +1,6 @@
-# Typst template for PSI slides
+# MARVEL Review and Retreat Pub Quiz
 
-Created by Edward Linscott based on the [university theme](https://touying-typ.github.io/touying/docs/themes/university)
-
-For use by PSI researchers only
-
-For an example see [slides.pdf](./slides.pdf)
+This is a pub quiz written by Edward Linscott for the MARVEL Review and Retreat in Grindelwald (January 2026).
 
 ## Missing `touying`?
 
